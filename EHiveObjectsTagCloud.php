@@ -25,7 +25,7 @@
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-if (in_array('eHiveAccess/EHiveAccess.php', (array) get_option('active_plugins', array()))) {
+if (in_array('ehive-access/EHiveAccess.php', (array) get_option('active_plugins', array()))) {
 
     class EHiveObjectsTagCloud {
     	
@@ -198,7 +198,7 @@ if (in_array('eHiveAccess/EHiveAccess.php', (array) get_option('active_plugins',
 			$options = get_option('ehive_objects_tag_cloud_options');
 				
 			if ($options[plugin_css_enabled] == 'on') {
-				wp_register_style($handle = 'eHiveObjectsTagCloudCSS', $src = plugins_url('eHiveObjectsTagCloud.css', '/eHiveObjectsTagCloud/css/eHiveObjectsTagCloud.css'), $deps = array(), $ver = '0.0.1', $media = 'all');
+				wp_register_style($handle = 'eHiveObjectsTagCloudCSS', $src = plugins_url('eHiveObjectsTagCloud.css', '/ehive-objects-tag-cloud/css/eHiveObjectsTagCloud.css'), $deps = array(), $ver = '0.0.1', $media = 'all');
 				wp_enqueue_style( 'eHiveObjectsTagCloudCSS');
 			}
 		}
@@ -277,6 +277,6 @@ if (in_array('eHiveAccess/EHiveAccess.php', (array) get_option('active_plugins',
 
     $eHiveObjectsTagCloud = new EHiveObjectsTagCloud();
   
-    add_action('activate_eHiveObjectsTagCloud/EHiveObjectsTagCloud.php', array(&$eHiveObjectsTagCloud, 'activate'));
-	add_action('deactivate_eHiveObjectsTagCloud/EHiveObjectsTagCloud.php', array(&$eHiveObjectsTagCloud, 'deactivate'));	
+    add_action('activate_ehive-objects-tag-cloud/EHiveObjectsTagCloud.php', array(&$eHiveObjectsTagCloud, 'activate'));
+	add_action('deactivate_ehive-objects-tag-cloud/EHiveObjectsTagCloud.php', array(&$eHiveObjectsTagCloud, 'deactivate'));	
 }?>
